@@ -1,3 +1,19 @@
+run = "python app.py"
+
+[workflows]
+
+[[workflows.workflow]]
+name = "Run"
+author = 40488393
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python app.py"
+
 [nix]
 channel = "stable-24_05"
-print (hi) 
+
+[[ports]]
+localPort = 8080
+externalPort = 80
